@@ -1,0 +1,116 @@
+
+
+
+
+
+
+
+/* Base slider styling */
+.slick-list {
+    margin: 0 -10px; /* Adjust spacing between slides */
+  }
+  
+  .slick-slide > div {
+    padding: 0 10px; /* Adjust spacing between slides */
+  }
+  
+  .slick-track {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .review {
+    flex: 1 0 50%; /* Show two items per row */
+    max-width: 50%; /* Ensure each review takes up half the width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px; /* Space between rows */
+  }
+  
+  /* Update hover effects */
+  .review:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5), 0 0 15px rgba(0, 255, 0, 0.5), 0 0 15px rgba(0, 0, 255, 0.5); /* Colorful shadow */
+  }
+  
+  /* General styling */
+  body {
+    background: #eceff1; /* Nice background color */
+  }
+  
+  /* Star rating styles */
+  button {
+    color: gold;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Base styling for the slider items */
+.slick-slide {
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .review {
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    background-color: #f9f9f9; /* Light background to make content pop */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for interactions */
+    width: 80%; /* Adjust based on your layout */
+    margin: auto; /* Center the review block */
+  }
+  
+  /* Image styling for center alignment and vibrant border */
+  .review img {
+    width: 120px; /* Slightly larger image */
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 20px; /* Center image and add space below */
+    display: block; /* Ensure it's block level for margin auto to work */
+    border: 4px solid #007bff; /* Brighter border color */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+  }
+  
+  /* Styling for the name and description for more vibrance */
+  .review h3 {
+    color: #0056b3; /* Vibrant color for names */
+    margin-bottom: 10px; /* Space between name and description */
+    font-size: 18px; /* Larger font size for emphasis */
+  }
+  
+  .review p {
+    color: #333; /* Darker for contrast and readability */
+    font-size: 16px; /* Readable text size */
+    margin: 0 10px; /* Ensure text doesn't touch the edges */
+  }
+  
+  /* Hover effects for dynamism */
+  .review:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover for emphasis */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow for pop */
+  }
+  
+  .review img:hover {
+    transform: rotate(360deg); /* Fun rotation effect for images */
+    transition: transform 0.6s ease-in-out; /* Smooth rotation transition */
+  }
+  
