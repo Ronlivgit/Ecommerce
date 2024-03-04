@@ -11,7 +11,7 @@ router.get("/:productId" ,getProduct);
 
 router.get("/" ,getProducts);
 
-router.post("/" ,addProduct);
+router.post("/add" ,addProduct);
 
 
 router.patch("/:productId" ,Authentication,Authorize("admin"),updateProduct);
