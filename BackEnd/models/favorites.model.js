@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 
 const favoriteSchema = new mongoose.Schema({
     favoriteId : {type : String},
-    userId : {type : String}, //currUser.userId
+    userId : {type: mongoose.Types.ObjectId , ref: 'User' }, //currUser.userId
     products : {type : Array }
 })
 
