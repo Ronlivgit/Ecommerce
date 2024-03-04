@@ -14,9 +14,14 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import HomeIcon from '@mui/icons-material/Home';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+
+
+
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -96,11 +101,9 @@ export default function PrimarySearchAppBar() {
         vertical: 'top',
         horizontal: 'right',
       }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
+      open={false}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+
     </Menu>
   );
 
@@ -121,32 +124,51 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
+
       <MenuItem>
-        <IconButton 
-        size="large" 
-        aria-label="show 4 new mails" 
-        color="inherit"
-        component={Link} to="/cart"
+        <IconButton
+          size="large"
+          aria-label="show 4 new mails"
+          color="inherit"
+          component={Link} to="/"
 
         >
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
+          {/* <Badge badgeContent={4} color="error"> */}
+          <HomeIcon />
+          {/* </Badge> */}
         </IconButton>
-        <p>Messages</p>
+        <p>Home</p>
       </MenuItem>
+      <MenuItem>
+        <IconButton
+          size="large"
+          aria-label="show 4 new mails"
+          color="inherit"
+          component={Link} to="/cart"
+
+        >
+          {/* <Badge badgeContent={4} color="error"> */}
+          <ShoppingCartIcon />
+          {/* </Badge> */}
+        </IconButton>
+        <p>Cart</p>
+      </MenuItem>
+
       <MenuItem>
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
           color="inherit"
+          component={Link} to="/wishlist"
+
         >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
+          {/* <Badge badgeContent={17} color="error"> */}
+          <FavoriteBorderOutlinedIcon />
+          {/* </Badge> */}
         </IconButton>
-        <p>Notifications</p>
+        <p>Wishlist</p>
       </MenuItem>
+
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
@@ -156,7 +178,7 @@ export default function PrimarySearchAppBar() {
           color="inherit"
           component={Link} to="/profile"
 
-          
+
         >
           <AccountCircle />
         </IconButton>
@@ -182,7 +204,7 @@ export default function PrimarySearchAppBar() {
             variant="h6"
             noWrap
             // component="div"
-            component={Link} to="/home"
+            component={Link} to="/"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
             Shop IDRN
@@ -198,30 +220,47 @@ export default function PrimarySearchAppBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-             
 
-             
+
+
             <IconButton
-            component={Link} to="/cart"
-             size="large" aria-label="show 4 new mails" color="inherit"
-             >
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
+              component={Link} to="/"
+              size="large" aria-label="show 4 new mails" color="inherit"
+            >
+              {/* <Badge badgeContent={4} color="error"> */}
+              <HomeIcon />
+              {/* </Badge> */}
             </IconButton>
 
             <IconButton
-            component={Link} to="/cart"
+              component={Link} to="/cart"
 
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
+              {/* <Badge badgeContent={17} color="error"> */}
+              <ShoppingCartIcon />
+              {/* </Badge> */}
             </IconButton>
+
             <IconButton
+              component={Link} to="/wishlist"
+
+              size="large"
+              aria-label="show 17 new notifications"
+              color="inherit"
+            >
+              {/* <Badge badgeContent={17} color="error"> */}
+              <FavoriteBorderOutlinedIcon />
+              {/* </Badge> */}
+            </IconButton>
+
+
+
+            <IconButton
+              component={Link} to="/profile"
+
               size="large"
               edge="end"
               aria-label="account of current user"
