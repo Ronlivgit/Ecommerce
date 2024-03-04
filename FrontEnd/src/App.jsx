@@ -12,6 +12,8 @@ import SignIn from './components/auth/SignIn';
 import Cart from './components/cart/Cart'
 import NotFound from './pages/notFound/NotFound';
 import Profile from './pages/profile/Profile';
+import SingleProduct from './pages/singleProduct/SingleProduct';
+import Wishlist from './pages/wishlist/Wishlist';
 
 
 
@@ -23,82 +25,52 @@ function App() {
     <>
       <BrowserRouter>
         <NavBar />
-        {/* {user ? ( */}
-          <Routes>
-            <Route
-              path="/home"
-              element={
-                <Home />
-              } />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home />
+            } />
 
-            <Route
-              path="/cart"
-              element={
-                <Cart />
-              } />
+          <Route
+            path="/cart"
+            element={
+              <Cart />
+            } />
 
-
-            <Route
-              path="/profile"
-              element={<Profile />
-              } />
-
-
-            <Route
-              path="/home/:ProductId"
-              element={<Home />
-              } />
+          <Route
+            path="/wishlist"
+            element={
+              <Wishlist />
+            } />
 
 
+          <Route
+            path="/:productId"
+            element={<SingleProduct />
+            } />
 
+          <Route
+            path="/profile"
+            element={<Profile />
+            } />
 
+          <Route
+            path="/signup"
+            element={<SignUp />
+            } />
 
-            <Route path="*" element={<NotFound />} />
-
-
-          </Routes>
-        {/* ) : ( */}
-          <Routes>
-            <Route
-              path="/home"
-              element={
-                <Home />
-              } />
-
-            <Route
-              path="/cart"
-              element={
-                <Cart />
-              } />
-
-
-            <Route
-              path="/home/:productId"
-              element={<Home />
-              } />
-
-            <Route
-              path="/profile"
-              element={<Profile />
-              } />
-
-            <Route
-              path="/signup"
-              element={<SignUp />
-              } />
-
-            <Route
-              path="/signIn"
-              element={<SignIn />
-              } />
+          <Route
+            path="/signIn"
+            element={<SignIn />
+            } />
 
 
 
-            <Route path="*" element={<NotFound/>} />
+          <Route path="*" element={<NotFound />} />
 
 
-          </Routes>
-        {/* )} */}
+        </Routes>
 
 
 
