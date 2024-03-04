@@ -10,6 +10,3 @@ router.get('/', Authentication, getOrder)
 
 module.exports = router
 
-
-
-module.exports = router
