@@ -1,6 +1,7 @@
 const {Product} = require("../models/product.model")
 const {generateToken , verifyToken} = require("../utils/jwt")
 
+
 const getProducts = async (req, res) => {
     try {
         const query = req.query
@@ -10,7 +11,6 @@ const getProducts = async (req, res) => {
     } catch (error) {
         console.log(error);
         res.status(400).send("error");
-
     }
 }
 
@@ -22,10 +22,8 @@ const getProduct = async (req, res) => {
 
     } catch (error) {
         res.status(400).send(error);
-
     }
 }
-
 
 
 const addProduct = async (req, res) => {
@@ -41,10 +39,6 @@ const addProduct = async (req, res) => {
         res.status(400).send("error");
     }
 };
-
-
-
-
 
 
 const updateProduct = async (req, res) => {
@@ -63,6 +57,7 @@ const updateProduct = async (req, res) => {
         res.status(400).send("Error");
     }
 }
+
 
 const deleteProduct = async (req, res) => {
     const { productId } = req.params;

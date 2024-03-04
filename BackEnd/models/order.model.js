@@ -8,7 +8,7 @@ const orderSchema = new mongoose.Schema({
     password : {type : String , required : true },
     role: {type : String , default : "user"},
     birthdate : {type : Date , required : true},
-    userId : {type : String},
+    userId : {type : String } ,
     address: {type : String } ,
     paymentOptions : {type : Array}
 })
