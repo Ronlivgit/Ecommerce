@@ -14,9 +14,10 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import HomeIcon from '@mui/icons-material/Home';
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -130,7 +131,7 @@ export default function PrimarySearchAppBar() {
 
         >
           <Badge badgeContent={4} color="error">
-            <MailIcon />
+          <ShoppingCartIcon />
           </Badge>
         </IconButton>
         <p>Messages</p>
@@ -202,11 +203,11 @@ export default function PrimarySearchAppBar() {
 
              
             <IconButton
-            component={Link} to="/cart"
+            component={Link} to="/home"
              size="large" aria-label="show 4 new mails" color="inherit"
              >
               <Badge badgeContent={4} color="error">
-                <MailIcon />
+              <HomeIcon />
               </Badge>
             </IconButton>
 
@@ -218,7 +219,7 @@ export default function PrimarySearchAppBar() {
               color="inherit"
             >
               <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
+              <ShoppingCartIcon />
               </Badge>
             </IconButton>
             <IconButton
