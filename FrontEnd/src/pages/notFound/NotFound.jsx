@@ -1,17 +1,71 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom'; 
-
+import { useNavigate } from 'react-router-dom';
+import './NotFound.css'
 
 function NotFound() {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   return (
-    <div>
-        <h1>404</h1>
-      <h1>Where are you going</h1>
-      <button onClick={() => navigate('/home')}>go back to Home</button>
-    </div>
+    <section class="page_404">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 ">
+            <div class="col-sm-10 col-sm-offset-1  text-center">
+              <div class="four_zero_four_bg">
+                <h1 class="text-center ">404</h1>
+
+
+              </div>
+
+              <div class="contant_box_404">
+                <h3 class="h2">
+                  Look like you're lost
+                </h3>
+
+                <p>the page you are looking for not avaible!</p>
+
+                <a href="" class="link_404">Go to Home</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
 export default NotFound;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<button onClick={() => navigate('/home')}>go back to Home</button>
