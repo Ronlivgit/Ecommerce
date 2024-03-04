@@ -38,7 +38,7 @@ const logUser = async (req, res) => {
     }
 }
 
-//! Validate through localStorage token (if user has valid token, auto log-in)
+//! Validate through localStorage token (if user has valid token, auto log)
 
 
 
