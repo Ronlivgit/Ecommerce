@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
+
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -120,7 +122,13 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+        <IconButton 
+        size="large" 
+        aria-label="show 4 new mails" 
+        color="inherit"
+        component={Link} to="/cart"
+
+        >
           <Badge badgeContent={4} color="error">
             <MailIcon />
           </Badge>
@@ -146,6 +154,9 @@ export default function PrimarySearchAppBar() {
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
           color="inherit"
+          component={Link} to="/profile"
+
+          
         >
           <AccountCircle />
         </IconButton>
@@ -170,7 +181,8 @@ export default function PrimarySearchAppBar() {
           <Typography
             variant="h6"
             noWrap
-            component="div"
+            // component="div"
+            component={Link} to="/home"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
             Shop IDRN
@@ -190,6 +202,7 @@ export default function PrimarySearchAppBar() {
 
              
             <IconButton
+            component={Link} to="/cart"
              size="large" aria-label="show 4 new mails" color="inherit"
              >
               <Badge badgeContent={4} color="error">
@@ -198,6 +211,8 @@ export default function PrimarySearchAppBar() {
             </IconButton>
 
             <IconButton
+            component={Link} to="/cart"
+
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"

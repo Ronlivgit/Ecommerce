@@ -28,4 +28,4 @@ const createOrder = async (req, res) => {
 
 
 
-module.exports = { getorder, createOrder }
+module.exports = { getOrder, createOrder }
