@@ -15,13 +15,13 @@ app.use(express.json())
 app.use(cors())
 
 
-app.use("/user" , userRouter)
-app.use("/cart" , cartRouter)
-app.use("/discount" , discountRouter)
-app.use("/favorite" , favoriteRouter)
-app.use("/order" , orderRouter)
-app.use("/payment" , paymentRouter)
-app.use("/product" , productRouter)
+app.use("/api/user" , userRouter)
+app.use("/api/cart" , cartRouter)
+app.use("/api/discount" , discountRouter)
+app.use("/api/favorite" , favoriteRouter)
+app.use("/api/order" , orderRouter)
+app.use("/api/payment" , paymentRouter)
+app.use("/api/product" , productRouter)
 
 
 module.exports = { app }
