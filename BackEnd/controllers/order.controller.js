@@ -12,7 +12,6 @@ const getOrder = async (req, res) => {
         return res.status(404).send(err)
     }
 }
-
 const createOrder = async (req, res) => {
     const body = req.body;
     try {
@@ -25,8 +24,6 @@ const createOrder = async (req, res) => {
         return res.status(404).send(err)
     }
 }
-
-//! Update Order (option for admin to update order status )
 
 
 
