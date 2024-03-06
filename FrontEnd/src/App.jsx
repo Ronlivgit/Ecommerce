@@ -3,7 +3,7 @@ import './App.css'
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 // import { UserContext } from './context/UserProvider';
 import { CardActionArea } from '@mui/material';
-
+import Footer from './components/footer/Footer';
 
 import NavBar from './components/navbar/NavBar'
 import Home from './pages/home/Home';
@@ -79,7 +79,7 @@ function App() {
         </Routes>
 
 
-
+<Footer/>
 
 
 
