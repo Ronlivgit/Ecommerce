@@ -1,21 +1,18 @@
 //! Model will include the Schema 
 const mongoose = require("mongoose")
 
-
-//! orderStatus options : "pending", "processing" , "shipSent" , "shipArrive" , "confirmed"
-// pending - waiting for admin reaction , processing - admin confirmed order + wait for ship , shipSent - shipped , 
-// shipArrive - waiting for customer , confirmed - user Confirmed 
-
+//! OrderStatus = awaiting, confirmed, shipped, arrived , confirmed
 const orderSchema = new mongoose.Schema({
-    email : {type : String , required : true , unique: true },
+    email : {type : String , required : true },
     fullName : {type : String , required : true },
-    password : {type : String , required : true },
-    role: {type : String },
+    password : {type : String },
+    role: {type : String , default : "user"},
     birthdate : {type : Date , required : true},
     userId : {type : mongoose.Types.ObjectId , ref: 'User' } ,
     address: {type : String } ,
     paymentOptions : {type : Array},
-    orderStatus : {type : String},
+    products : {type : Array},
+    orderStatus : {type : String , default : "awaiting"}
 })
 
 const Order = mongoose.model("Orders" , orderSchema)
