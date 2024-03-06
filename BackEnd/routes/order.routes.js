@@ -7,6 +7,11 @@ const { createOrder, getOrder } = require('../controllers/order.controller')
 
 router.get('/', Authentication, getOrder)
 
+router.post('/create', Authentication, createOrder)
+
+//! Patch to update order status
+
+
+
 
 module.exports = router
-

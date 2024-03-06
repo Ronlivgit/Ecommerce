@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import {APIBaseUrl} from '../config/API'
+// import {APIBaseUrl} from '../config/API'
 
 export const UserContext = createContext();
 export const useAuth = () => useContext(UserContext);
@@ -11,7 +11,7 @@ export default function UserProvider  ({ children })  {
   const getUser = async ( )=>{
     try {
       const token = localStorage.getItem('token')
-      const response = await fetch(`${APIBaseUrl}/users/init-user`, 
+      const response = await fetch(`${APIBaseUrl}/user/init-user`, 
       {
         method: 'GET',
         headers: {

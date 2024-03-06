@@ -13,11 +13,13 @@ const getOrder = async (req, res) => {
     }
 }
 
+
 const createOrder = async (req, res) => {
     const body = req.body;
     try {
         body.userId = req.body.userId;
         const newOrder = new Order(body)
+        console.log("newOrder" , newOrder);
         await newOrder.save()
         return res.status(201).send(newOrder)
     } catch (err) {
@@ -25,8 +27,6 @@ const createOrder = async (req, res) => {
         return res.status(404).send(err)
     }
 }
-
-//! Update Order (option for admin to update order status )
 
 
 
