@@ -1,4 +1,4 @@
-const { User } = require("../models/checkIfExist.model")
+const { User } = require("../models/user.model")
 const { generateToken, verifyToken } = require("../utils/jwt")
 const bcrypt = require("bcryptjs")
 
