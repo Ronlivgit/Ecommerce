@@ -18,6 +18,9 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import HomeIcon from '@mui/icons-material/Home';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
+
+
 
 
 
@@ -169,6 +172,21 @@ export default function PrimarySearchAppBar() {
         <p>Wishlist</p>
       </MenuItem>
 
+      <MenuItem>
+        <IconButton
+          size="large"
+          aria-label="show 17 new notifications"
+          color="inherit"
+          component={Link} to="/about"
+
+        >
+          {/* <Badge badgeContent={17} color="error"> */}
+          <DescriptionOutlinedIcon />
+          {/* </Badge> */}
+        </IconButton>
+        <p>About</p>
+      </MenuItem>
+
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
@@ -253,6 +271,18 @@ export default function PrimarySearchAppBar() {
             >
               {/* <Badge badgeContent={17} color="error"> */}
               <FavoriteBorderOutlinedIcon />
+              {/* </Badge> */}
+            </IconButton>
+
+            <IconButton
+              component={Link} to="/about"
+
+              size="large"
+              aria-label="show 17 new notifications"
+              color="inherit"
+            >
+              {/* <Badge badgeContent={17} color="error"> */}
+              <DescriptionOutlinedIcon />
               {/* </Badge> */}
             </IconButton>
 
