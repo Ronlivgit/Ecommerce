@@ -6,10 +6,11 @@ const getProducts = async (req, res) => {
     try {
         const query = req.query
         const Products = await Product.find({ ...query });
-        return res.send(Products);
+        res.send(Products);
+
     } catch (error) {
         console.log(error);
-        return res.status(400).send("error");
+        res.status(400).send("error");
     }
 }
 
@@ -17,9 +18,10 @@ const getProduct = async (req, res) => {
     const { productId } = req.params;
     try {
         const Products = await Product.findById(productId).populate("questions");
-        return res.send(Products);
+        res.send(Products);
+
     } catch (error) {
-        return res.status(400).send(error);
+        res.status(400).send(error);
     }
 }
 
@@ -31,10 +33,10 @@ const addProduct = async (req, res) => {
         console.log(newProduct);
         newProduct.productId = newProduct._id;
         await newProduct.save();
-        return res.send(newProduct);
+        res.send(newProduct);
     } catch (error) {
         console.log(error);
-        return res.status(400).send("error");
+        res.status(400).send("error");
     }
 };
 

@@ -5,6 +5,7 @@ const bcrypt = require("bcryptjs")
 const getusers = async (req, res) => {
     console.log('got here');
 }
+
 const registerUser = async (req, res) => {
     const body = req.body
     try {
@@ -38,7 +39,6 @@ const logUser = async (req, res) => {
     }
 }
 
-//! Validate through localStorage token (if user has valid token, auto log)
 
 
 
