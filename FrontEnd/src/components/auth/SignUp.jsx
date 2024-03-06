@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom'; 
-// import { APIBaseUrl } from '../../config/API';
+import { APIBaseUrl } from '../../config/Api';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -24,7 +24,7 @@ function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${APIBaseUrl}/users/register`, {
+      const response = await fetch(`${APIBaseUrl}/user/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -120,8 +120,8 @@ function SignUp() {
                   native: true,
                 }}
               >
-                {/* <option value="player">Player</option>
-                <option value="admin">Admin</option> */}
+                <option value="player">User</option>
+                <option value="admin">Admin</option>
               </TextField>
               <Button
                 type="submit"
