@@ -1,8 +1,6 @@
 import { useContext, useState } from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-// import { UserContext } from './context/UserProvider';
-import { CardActionArea } from '@mui/material';
 
 
 import NavBar from './components/navbar/NavBar'
@@ -14,7 +12,7 @@ import NotFound from './pages/notFound/NotFound';
 import Profile from './pages/profile/Profile';
 import SingleProduct from './pages/singleProduct/SingleProduct';
 import Wishlist from './pages/wishlist/Wishlist';
-
+import Footer from './components/footer/Footer';
 
 
 function App() {
@@ -76,7 +74,7 @@ function App() {
 
 
 
-
+<Footer/>
       </BrowserRouter>
 
 
@@ -85,3 +83,9 @@ function App() {
 }
 
 export default App
+
+
+
+
+
+
