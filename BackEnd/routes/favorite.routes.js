@@ -1,4 +1,4 @@
-const {Router} = require("express")
+const { Router } = require("express")
 const router = Router()
 
 const { addFavorite, deleteFavorit, getFavorite } = require('../controllers/favorites.controller'); // Corrected the require syntax and function names
@@ -6,12 +6,12 @@ const { addFavorite, deleteFavorit, getFavorite } = require('../controllers/favo
 
 
 
-router.get("/" ,getFavorit);
+router.get("/", getFavorite);
 
-router.post("/",addFavorit);
+router.post("/", addFavorite);
 
 
-router.delete("/:productId", deleteFavorit);
+router.delete("/:productId", deleteFavorite);
 
 
 
