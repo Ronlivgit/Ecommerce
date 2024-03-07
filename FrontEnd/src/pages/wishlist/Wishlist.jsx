@@ -7,12 +7,10 @@ export default function Wishlist() {
   const userToken = localStorage.getItem('token');
   console.log(userToken);
   const [products, setProducts] = useState([]);
-  const [error, setError] = useState('');
-  const user = useContext(UserContext);
-
   useEffect(() => {
     fetchProducts();
-  }, [user.user.userId]); // Depend on user ID if it's dynamic
+  }, []);
+
 
   async function fetchProducts() {
     try {
