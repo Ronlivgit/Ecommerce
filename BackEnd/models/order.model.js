@@ -2,6 +2,7 @@
 const mongoose = require("mongoose")
 
 //! OrderStatus = awaiting, confirmed, shipped, arrived , confirmed
+
 const orderSchema = new mongoose.Schema({
     email : {type : String , required : true },
     fullName : {type : String , required : true },
@@ -12,7 +13,9 @@ const orderSchema = new mongoose.Schema({
     address: {type : String } ,
     paymentOptions : {type : Array},
     products : {type : Array},
-    orderStatus : {type : String , default : "awaiting"}
+    orderStatus : {type : String , default : "awaiting"},
+    discountCode : { type : Number } ,
+    totalPrice : {type : Number }
 })
 
 const Order = mongoose.model("Orders" , orderSchema)
