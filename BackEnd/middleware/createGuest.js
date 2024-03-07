@@ -15,7 +15,6 @@ const createGuestIfNotExist = async (req, res, next) => {
         // Save the guest model instance to the database
         await guest.save();
     }
-
     // Set the guest token in the request object for further processing
     req.guestToken = guestToken;
     next();

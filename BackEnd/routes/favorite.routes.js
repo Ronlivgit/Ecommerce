@@ -6,9 +6,9 @@ const { addFavorite, deleteFavorit, getFavorite } = require('../controllers/favo
 
 
 
-router.get("/" ,getFavorit);
+router.get("/" ,getFavorite);
 
-router.post("/",addFavorit);
+router.post("/",addFavorite);
 
 
 router.delete("/:productId", deleteFavorit);
