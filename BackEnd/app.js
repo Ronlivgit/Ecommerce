@@ -12,6 +12,7 @@ const paymentRouter = require("./routes/payment.routes")
 const productRouter = require("./routes/product.routes")
 const createGuestIfNotExist = require("./middleware/createGuest")
 
+
 app.use(express.json())
 app.use(cors())
 
@@ -24,6 +25,9 @@ app.use("/api/favorite" , favoriteRouter)
 app.use("/api/order" , orderRouter)
 app.use("/api/payment" , paymentRouter)
 app.use("/api/product" , productRouter)
+
+
+
 
 
 module.exports = { app }

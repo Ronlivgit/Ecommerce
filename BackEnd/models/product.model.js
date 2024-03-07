@@ -5,11 +5,11 @@ const currDate = new Date()
 
 const productSchema = new mongoose.Schema({
     productId: { type: String },
-    title: { type: String, required: true },
-    img: { type: String, required: true },
-    desc: { type: String, required: true },
-    date: { type: Date, required: true, default: currDate },
-    price: { type: Number, required: true },
+    title: { type: String, required: false },
+    img: { type: String, required: false },
+    desc: { type: String, required: false },
+    date: { type: Date, required: false, default: currDate },
+    price: { type: Number, required: false },
     supplyInStock: { type: Number, default : 100 },
     units: { type: Number , default : 1 },
     discounts: [

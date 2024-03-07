@@ -5,9 +5,6 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 // import { UserContext } from './context/UserProvider';
 import { CardActionArea } from '@mui/material';
 import Footer from './components/footer/Footer';
-
-
-
 import NavBar from './components/navbar/NavBar'
 import Home from './pages/home/Home';
 import SignUp from './components/auth/SignUp';
@@ -17,6 +14,9 @@ import NotFound from './pages/notFound/NotFound';
 import Profile from './pages/profile/Profile';
 import SingleProduct from './pages/singleProduct/SingleProduct';
 import Wishlist from './pages/wishlist/Wishlist';
+import About from './pages/about/About'
+
+
 
 
 
@@ -81,7 +81,6 @@ function App() {
         </Routes>
 
 
-<Footer/>
 
 
 <Footer/>
