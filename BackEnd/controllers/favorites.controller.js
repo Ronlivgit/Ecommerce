@@ -36,7 +36,7 @@ const addFavorite = async (req, res) => {
 };
 
 
-const deleteFavorit = async (req, res) => {
+const deleteFavorite = async (req, res) => {
     const { productId } = req.params;
     console.log("Attempting to delete productId:", productId); 
     try {
@@ -58,4 +58,4 @@ const deleteFavorit = async (req, res) => {
 
 
 
-module.exports = {addFavorite,deleteFavorit,getFavorite}
+module.exports = {addFavorite,deleteFavorite,getFavorite}

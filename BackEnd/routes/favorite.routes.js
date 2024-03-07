@@ -1,7 +1,7 @@
 const { Router } = require("express")
 const router = Router()
 
-const { addFavorite, deleteFavorit, getFavorite } = require('../controllers/favorites.controller'); // Corrected the require syntax and function names
+const { addFavorite, deleteFavorite, getFavorite } = require('../controllers/favorites.controller'); // Corrected the require syntax and function names
 // const {Authentication} = require("../middleware/authentication")
 
 
