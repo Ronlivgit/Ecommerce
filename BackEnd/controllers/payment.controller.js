@@ -8,6 +8,7 @@ const paypal = require('@paypal/checkout-server-sdk');
 //     const idBuyer = req.params.id.toString();
 //     const query = req.query
 //     try {
+    
 //         const updatePayment = payments.find(payment => payment.buyerId === idBuyer)
 //         const payments = await updatePayment.find({ ...query })
 //         return res.send(payments)
