@@ -2,7 +2,7 @@ const { config } = require('../config')
 const { Payment } = require("../models/payment.model");
 const { User } = require('../models/user.model');
 const { generateToken, verifyToken } = require("../utils/jwt")
-const paypal = require('@paypal/checkout-server-sdk');
+// const paypal = require('@paypal/checkout-server-sdk');
 
 // const getPaymentByuser = async (req, res) => {
 //     const idBuyer = req.params.id.toString();
@@ -18,8 +18,8 @@ const paypal = require('@paypal/checkout-server-sdk');
 //     }
 // }
 
-const environment = new paypal.core.SandboxEnvironment(config.PAYPAL_CLIENT_ID, config.PAYPAL_SECRET_KEY);
-const client = new paypal.core.PayPalHttpClient(environment);
+// const environment = new paypal.core.SandboxEnvironment(config.PAYPAL_CLIENT_ID, config.PAYPAL_SECRET_KEY);
+// const client = new paypal.core.PayPalHttpClient(environment);
 
 const getPayments = async (req, res) => {
     const query = req.query
