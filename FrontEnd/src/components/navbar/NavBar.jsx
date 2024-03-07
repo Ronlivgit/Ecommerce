@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -19,6 +19,8 @@ import HomeIcon from '@mui/icons-material/Home';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
+import { UserContext } from '../../context/UserProvider';
+import Diversity3Icon from '@mui/icons-material/Diversity3';
 
 
 
@@ -69,6 +71,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const { setUser ,user} = React.useContext(UserContext);
+
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -90,6 +94,13 @@ export default function PrimarySearchAppBar() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+  const handleSignIn = () => {
+    Navigate('/signin');
+  };
+  
+  const handleSignOut = () => {
+  };
+
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -104,9 +115,11 @@ export default function PrimarySearchAppBar() {
         vertical: 'top',
         horizontal: 'right',
       }}
-      open={false}
+      open={isMenuOpen}
+      onClose={handleMenuClose}
     >
-
+    <MenuItem component={Link} to="/signin" onClick={handleMenuClose}>Sign In</MenuItem>
+      <MenuItem onClick={() => setUser(null)}>Sign out</MenuItem>
     </Menu>
   );
 
@@ -181,7 +194,7 @@ export default function PrimarySearchAppBar() {
 
         >
           {/* <Badge badgeContent={17} color="error"> */}
-          <DescriptionOutlinedIcon />
+          <Diversity3Icon />
           {/* </Badge> */}
         </IconButton>
         <p>About</p>
@@ -282,7 +295,7 @@ export default function PrimarySearchAppBar() {
               color="inherit"
             >
               {/* <Badge badgeContent={17} color="error"> */}
-              <DescriptionOutlinedIcon />
+              <Diversity3Icon />
               {/* </Badge> */}
             </IconButton>
 
