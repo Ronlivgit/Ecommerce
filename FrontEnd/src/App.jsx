@@ -17,6 +17,7 @@ import NotFound from './pages/notFound/NotFound';
 import Profile from './pages/profile/Profile';
 import SingleProduct from './pages/singleProduct/SingleProduct';
 import Wishlist from './pages/wishlist/Wishlist';
+import About from './pages/about/About';
 
 
 
