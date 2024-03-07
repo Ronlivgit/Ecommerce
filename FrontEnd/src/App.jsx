@@ -6,8 +6,6 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { CardActionArea } from '@mui/material';
 import Footer from './components/footer/Footer';
 
-
-
 import NavBar from './components/navbar/NavBar'
 import Home from './pages/home/Home';
 import SignUp from './components/auth/SignUp';
@@ -85,7 +83,7 @@ function App() {
 <Footer/>
 
 
-<Footer/>
+
       </BrowserRouter>
 
 
