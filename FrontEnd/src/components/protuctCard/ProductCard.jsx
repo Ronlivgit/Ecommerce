@@ -11,12 +11,15 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+import { CartContext } from '../../context/CartProvider';
+import { useContext } from 'react';
 
 
-
-export default function ProductCard({ product }) {
-  console.log({ 'product first': product });
-
+export default function ProductCard({ product,key }) {
+  
+  const {addToCart} = useContext(CartContext)
+  console.log({product});
+  
   // const productData = {
   //   price: product.price,
   //   title: product.title
@@ -82,11 +85,8 @@ const userToken = localStorage.getItem('token');
       </CardActions>
       <CardActions>
         <Button size="small" startIcon={<MonetizationOnIcon />} >Buy Now</Button>
-        <Button size="small" startIcon={<ShoppingCartIcon />}>Add to Cart</Button>
-        <Button size="small" onClick={
-          sendToFavorites
-        } startIcon={<FavoriteBorderIcon />}></Button>
-
+        <Button size="small" defaultValue={product.productId} onClick={()=>{addToCart(product)}} startIcon={<ShoppingCartIcon />}>Add to Cart</Button>
+        <Button size="small" startIcon={<FavoriteBorderIcon />} onClick={sendToFavorites} ></Button>
 
       </CardActions>
 
