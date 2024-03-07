@@ -15,6 +15,7 @@ import NotFound from './pages/notFound/NotFound';
 import Profile from './pages/profile/Profile';
 import SingleProduct from './pages/singleProduct/SingleProduct';
 import Wishlist from './pages/wishlist/Wishlist';
+import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 
 
 
@@ -29,7 +30,7 @@ function App() {
 
   return (
     <>
-    {/* dont touch the provider please!! */}
+      {/* dont touch the provider please!! */}
       <PayPalScriptProvider options={initialOptions}>
         <BrowserRouter>
           <NavBar />
@@ -78,18 +79,13 @@ function App() {
               element={<SignIn />
               } />
 
-
-
             <Route path="*" element={<NotFound />} />
-
 
           </Routes>
 
-
           <Footer />
 
-<Footer/>
-      </BrowserRouter>
+        </BrowserRouter>
 
       </PayPalScriptProvider>
     </>

@@ -15,13 +15,6 @@ import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 
 
 export default function ProductCard({ product }) {
-  console.log({ 'product first': product });
-
-  // const productData = {
-  //   price: product.price,
-  //   title: product.title
-
-  // }
 const userToken = localStorage.getItem('token');
 
   const sendToFavorites = async () => {
