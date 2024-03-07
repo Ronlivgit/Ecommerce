@@ -5,11 +5,11 @@ const cartSchema = new mongoose.Schema({
     cartId : {type : String},
     userId : {type: mongoose.Types.ObjectId , ref: 'User' }, //currUser.userId
     products : [
-        {product : {type : mongoose.Types.ObjectId , ref: 'Product'}},
+        {productId : {type : mongoose.Types.ObjectId , ref: 'Product'}},
         {quantity : {type : Number}}
     ]
 })
 
-const Cart = mongoose.model("Carts", cartSchema)
+const Cart = mongoose.model("Carts" , cartSchema)
 
 module.exports = { Cart }
