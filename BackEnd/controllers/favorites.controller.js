@@ -5,11 +5,13 @@ const {Favorite} = require("../models/favorites.model")
 
 
 
-
+// 
 const getFavorite = async (req, res) => {
     try {
         const query = req.query
-        const favorite = await Favorite.find({ ...query });
+        console.log("query : ", {...query});
+        const favorite = await Favorite.find({...query});
+        console.log("favorite",favorite);
         res.send(favorite);
 
     } catch (error) {
@@ -24,9 +26,14 @@ const getFavorite = async (req, res) => {
 const addFavorite = async (req, res) => {
     try {
         const body = req.body;
-        const newProduct = new Favorite(body);
-        console.log(newProduct);
-        newProduct.productId = newProduct._id;
+        const user = req.user
+        console.log("user : ", user);
+        console.log("body : " , body);
+        const newProduct =  Favorite(body);
+        console.log("hybyvuyv"+newProduct);
+        newProduct.favoriteId = newProduct._id;
+        newProduct.userId = user.id
+        console.log("newProduct :",newProduct);
         await newProduct.save();
         res.send(newProduct);
     } catch (error) {
@@ -36,7 +43,7 @@ const addFavorite = async (req, res) => {
 };
 
 
-const deleteFavorit = async (req, res) => {
+const deleteFavorite = async (req, res) => {
     const { productId } = req.params;
     console.log("Attempting to delete productId:", productId); 
     try {
@@ -58,4 +65,4 @@ const deleteFavorit = async (req, res) => {
 
 
 
-module.exports = {addFavorite,deleteFavorit,getFavorite}
+module.exports = {addFavorite,deleteFavorite,getFavorite}
