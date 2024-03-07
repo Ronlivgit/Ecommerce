@@ -1,5 +1,10 @@
-const {Product} = require("../models/product.model")
-const {generateToken , verifyToken} = require("../utils/jwt")
+const { Product } = require("../models/product.model")
+const { generateToken, verifyToken } = require("../utils/jwt")
+const { uploadToCloudinary, removeFromCloudinary } = require("../utils/cloudinary");
+
+
+
+
 
 
 const getProducts = async (req, res) => {
@@ -74,6 +79,54 @@ const deleteProduct = async (req, res) => {
     }
 }
 
+const uploadProductImage = async (req, res) => {
+    console.log("nmnbnbnm");
+    try {
+        //Upload Image to Cloudinary
+        const data = await uploadToCloudinary(req.file.path, "product-images");
+        console.log(data);
+        //Save Image Url and publiId ti the database
+        const savedImg = await Product.findByIdAndUpdate(
+            { _id: req.params.id },
+            {
+                $set: {
+                    img: data.url,
+                    publicId: data.public_id,
+                },
+            },
+            { new: true }
+        );
+
+        res.status(200).send(savedImg);
+    } catch (error) {
+        res.status(400).send(error);
+    }
+}
+
+const deleteProductImage = async (req, res) => {
+    try {
+        //Find Product
+        const product = await Product.findOne({ _id: req.params.id });
+        //Find it's publicId
+        const publicId = product.publicId;
+        //Remove it from cloudinary
+        await removeFromCloudinary(publicId);
+        //Remove it from the Database
+        const deleteImg = await Product.updateOne(
+            { _id: req.params.id },
+            {
+                $set: {
+                    imageUrl: "",
+                    publicId: "",
+                },
+            }
+        );
+        res.status(200).send("Product image deleted with success!");
+    } catch (error) {
+        res.status(400).send(error);
+    }
+}
 
 
-module.exports = {addProduct, updateProduct, deleteProduct, getProducts, getProduct}
+
+module.exports = { addProduct, updateProduct, deleteProduct, getProducts, getProduct, deleteProductImage, uploadProductImage }

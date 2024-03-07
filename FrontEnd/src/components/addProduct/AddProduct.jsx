@@ -109,9 +109,9 @@ export default function AddProduct() {
                         inputMode: 'numeric',
                         pattern: '[0-9]*',
                     }}
-                />
+                /> 
 
-                <TextField
+                 <TextField
                     id="standard-textarea"
                     label="units"
                     name="units"
@@ -122,12 +122,8 @@ export default function AddProduct() {
                         inputMode: 'numeric',
                         pattern: '[0-9]*',
                     }}
-                />
-                <input 
-                type="number"
-                label="units"
-                name="units"
-                placeholder="units"                />
+                /> 
+                
 
                 {/* <TextField
                     id="standard-textarea"
@@ -153,25 +149,26 @@ export default function AddProduct() {
                     <label htmlFor="image" className="fileLabel">
                         <div className="imageInputDiv">
                             <img
-                                className="image"
+
+                                className="imageIcone"
                                 src="https://cdn.pixabay.com/photo/2017/11/10/04/47/image-2935360_640.png"
                                 alt=""
                                 srcset=""
-                            />
-                            {/* <span className='imageInputText'>Upload Picture</span> */}
-                        </div>
+                            />  
+                             {/* <span className='imageInputText'>Upload Picture</span>  */}
+                         </div>
                     </label>
-                </div>
-                <img className="addPostImg" src={img} alt="" />
+                </div> 
+              <img className="addPostImg" src={img} alt="" /> 
 
-                <TextField
+              {/* <TextField
                     id="standard-textarea"
                     label="amount"
                     name="amount"
                     placeholder="anount"
                     multiline
                     variant="standard"
-                />
+                /> */}
 
                 <button type='submit' onClick={handleSubmit}>upload</button>
             </form>

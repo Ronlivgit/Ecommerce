@@ -48,7 +48,7 @@ export default function ProductCard({ product }) {
 
 
         <Button size="small" startIcon={<RemoveIcon />}></Button>
-        <Button size="small">1</Button>
+        <Button size="small" >1</Button>
         <Button size="small" startIcon={<AddIcon />}></Button>
       </CardActions>
       <CardActions>
