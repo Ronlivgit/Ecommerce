@@ -5,6 +5,7 @@ const {Favorite} = require("../models/favorites.model")
 
 
 
+
 const getFavorite = async (req, res) => {
     try {
         const query = req.query
