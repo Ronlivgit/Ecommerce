@@ -20,6 +20,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import { UserContext } from '../../context/UserProvider';
+import Diversity3Icon from '@mui/icons-material/Diversity3';
 
 
 
@@ -193,7 +194,7 @@ export default function PrimarySearchAppBar() {
 
         >
           {/* <Badge badgeContent={17} color="error"> */}
-          <DescriptionOutlinedIcon />
+          <Diversity3Icon />
           {/* </Badge> */}
         </IconButton>
         <p>About</p>
@@ -294,7 +295,7 @@ export default function PrimarySearchAppBar() {
               color="inherit"
             >
               {/* <Badge badgeContent={17} color="error"> */}
-              <DescriptionOutlinedIcon />
+              <Diversity3Icon />
               {/* </Badge> */}
             </IconButton>
 

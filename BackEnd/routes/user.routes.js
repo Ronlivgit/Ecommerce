@@ -16,9 +16,9 @@ router.post('/login', logUser)
 
 router.get('/init-user', Authentication, getAuth );
 
-router.patch('/:id', Authentication , Authorize("admin"), updatedUser)
+router.patch('/:id',Authentication, Authorize("admin"), updatedUser)
 
-router.delete('/:id', Authentication , Authorize("admin"), deleteUser);
+router.delete('/:id',Authentication, Authorize("admin"), deleteUser);
 
 
 
