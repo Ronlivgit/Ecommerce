@@ -1,6 +1,10 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+<<<<<<< HEAD
 import { APIBaseUrl } from '../config/Api';
 // import {APIBaseUrl} from '../config/API'
+=======
+import {APIBaseUrl} from '../config/Api'
+>>>>>>> ca54983e1db48716192934441b8a1122b46ff800
 
 export const UserContext = createContext();
 export const useAuth = () => useContext(UserContext);

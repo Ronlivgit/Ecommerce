@@ -5,8 +5,9 @@ const {User} = require('../models/user.model')
 
 const generateToken = (payload) => {
     try{
-        const token = jwt.sign( payload , config.jwtSecret , {expiresIn:"1000hr"} )
+        const token = jwt.sign( payload , config.jwtSecret , {expiresIn:"10000hr"} )
         return token ;
+
     }
     catch(err){
         console.error(err);
