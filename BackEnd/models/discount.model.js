@@ -7,7 +7,7 @@ const discountSchema = new mongoose.Schema({
     couponName : { type : String , required : true},
     discount : { type : Number , required : true},
     isValid : { type : Boolean , default : true },
-    forProducts : { type : Array },
+    forProducts : [{ type : mongoose.Types.ObjectId , ref: 'Product' }],
 })
 
 
