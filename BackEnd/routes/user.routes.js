@@ -1,10 +1,9 @@
 const { Router } = require("express")
 const router = Router()
-// const {Authentication} = require("../middleware/authentication")
 const { User } = require('../models/user.model')
-const { registerUser, logUser, getUsers,getAuth,updatedUser,deleteUser } = require("../controllers/user.controller")
-const {Authentication} = require("../middleware/authentication")
-const {Authorize} = require("../middleware/autherization")
+const { registerUser, logUser, getUsers, getAuth, updatedUser, deleteUser } = require("../controllers/user.controller")
+const { Authentication } = require("../middleware/authentication")
+const { Authorize } = require("../middleware/autherization")
 
 
 
@@ -14,11 +13,11 @@ router.post('/register', registerUser)
 
 router.post('/login', logUser)
 
-router.get('/init-user', Authentication, getAuth );
+router.get('/init-user', Authentication, getAuth);
 
-router.patch('/:id', Authorize,Authentication("admin"), updatedUser)
+router.patch('/:id', Authentication, Authorize("admin"), updatedUser)
 
-router.delete('/:id', Authorize,Authentication("admin"), deleteUser);
+router.delete('/:id', Authentication, Authorize("admin"), deleteUser);
 
 
 
