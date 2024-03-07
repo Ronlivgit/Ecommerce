@@ -1,10 +1,13 @@
 const { config } = require('../config')
 const { Payment } = require("../models/payment.model");
 const { User } = require('../models/user.model');
+
 const paypal = require('@paypal/checkout-server-sdk');
 
 const environment = new paypal.core.SandboxEnvironment(config.PAYPAL_CLIENT_ID, config.PAYPAL_SECRET_KEY);
 const client = new paypal.core.PayPalHttpClient(environment);
+const { generateToken, verifyToken } = require("../utils/jwt")
+
 
 const createOrder = async (req, res) => {
     try {
