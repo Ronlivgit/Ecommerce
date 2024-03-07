@@ -19,4 +19,5 @@ const Authorize = (role) => {
 
 //TODO example for admins allow to del : router.delete('/path' , authentication , authorize(["admin","owner"]) , deleteUserFunc)
 
+
 module.exports = {Authorize}
