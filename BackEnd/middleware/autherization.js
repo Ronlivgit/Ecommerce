@@ -7,7 +7,7 @@ const Authorize = (role) => {
         //we get req.user info through Authentication, then check it's role.
         const user = req.user
         // role.includes checks if user's role is part of the multiple roles implented.
-        if(role.includes(user.role) === role) {
+        if(role.includes(user.role)) {
             return next()
         }
         else{
