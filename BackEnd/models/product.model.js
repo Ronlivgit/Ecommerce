@@ -2,14 +2,14 @@
 const mongoose = require("mongoose")
 
 const currDate = new Date()
-
+//! Place required on : title,img,desc,date,price
 const productSchema = new mongoose.Schema({
     productId: { type: String },
-    title: { type: String, required: true },
-    img: { type: String, required: true },
-    desc: { type: String, required: true },
-    date: { type: Date, required: true, default: currDate },
-    price: { type: Number, required: true },
+    title: { type: String,  },
+    img: { type: String,  },
+    desc: { type: String, },
+    date: { type: Date, default: currDate },
+    price: { type: Number, },
     supplyInStock: { type: Number, default : 100 },
     units: { type: Number , default : 1 },
     discounts: [
