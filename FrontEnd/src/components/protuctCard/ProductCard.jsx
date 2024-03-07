@@ -15,9 +15,38 @@ import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 
 
 export default function ProductCard({ product }) {
-  console.log({product});
-  
+  console.log({ 'product first': product });
 
+  // const productData = {
+  //   price: product.price,
+  //   title: product.title
+
+  // }
+const userToken = localStorage.getItem('token');
+
+  const sendToFavorites = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/api/favorite', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization' : `Bearer ${userToken}`,
+        },
+        body: JSON.stringify(product),
+      });
+      console.log(response);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json(); // Assuming the server responds with JSON
+      console.log('Success:', data);
+      // Handle success, e.g., showing a success message
+    } catch (error) {
+      console.error('Error:', error);
+      // Handle errors, e.g., showing an error message
+    }
+  };
 
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -33,7 +62,7 @@ export default function ProductCard({ product }) {
         </Typography>
 
         <Typography variant="body2" color="text.secondary">
-          { product.desc}
+          {product.desc}
         </Typography>
 
       </CardContent>
@@ -54,7 +83,9 @@ export default function ProductCard({ product }) {
       <CardActions>
         <Button size="small" startIcon={<MonetizationOnIcon />} >Buy Now</Button>
         <Button size="small" startIcon={<ShoppingCartIcon />}>Add to Cart</Button>
-        <Button size="small" startIcon={<FavoriteBorderIcon />}></Button>
+        <Button size="small" onClick={
+          sendToFavorites
+        } startIcon={<FavoriteBorderIcon />}></Button>
 
 
       </CardActions>
