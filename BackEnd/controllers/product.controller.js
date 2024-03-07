@@ -28,6 +28,7 @@ const getProduct = async (req, res) => {
 
 const addProduct = async (req, res) => {
     try {
+        console.log("hi");
         const body = req.body;
         const newProduct = new Product(body);
         console.log(newProduct);
