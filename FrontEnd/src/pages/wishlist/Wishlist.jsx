@@ -17,6 +17,7 @@ export default function Wishlist() {
       }
       const data = await response.json();
       setProducts(data);
+      console.log(products);
       setIsLoading(false);
     } catch (err) {
       console.error("Error fetching products:", err);
@@ -48,10 +49,10 @@ export default function Wishlist() {
           <br />
 
           <button onClick={() => addToBasket(prod._id)}>Add to Basket</button>
+          {/* yizak worked down here doesnt finish */}
+          <PayPalPayment  prod={prod}/>
         </div>
       ))}
-      {/* yizak worked down here doesnt finish */}
-      <PayPalPayment />
     </div>
 
 
