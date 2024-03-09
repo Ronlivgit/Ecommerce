@@ -6,14 +6,15 @@ const paypal = require('@paypal/checkout-server-sdk');
 
 const environment = new paypal.core.SandboxEnvironment(config.PAYPAL_CLIENT_ID, config.PAYPAL_SECRET_KEY);
 const client = new paypal.core.PayPalHttpClient(environment);
-const { generateToken, verifyToken } = require("../utils/jwt")
+const { createNewOrder, captureOrder } = require('../utils/payPal');
 
 
 const createOrder = async (req, res) => {
     try {
         // use the cart information passed from the front-end to calculate the order amount detals
         const { cart } = req.body;
-        const { jsonResponse, httpStatusCode } = await createOrder(cart);
+        console.log(cart);
+        const { jsonResponse, httpStatusCode } = await createNewOrder(cart);
         res.status(httpStatusCode).json(jsonResponse);
     } catch (error) {
         console.error("Failed to create order:", error);
