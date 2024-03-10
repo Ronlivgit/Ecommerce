@@ -1,53 +1,44 @@
-import React, { useState, useEffect, useContext } from "react";
-import { UserContext } from "../../context/UserProvider";
+import React, { useState, useEffect } from "react";
+import PayPalPayment from "../../components/PayPalPayment";
 
-const faveURL = 'http://localhost:3000/api/favorite';
 
+const faveURL = 'http://localhost:3000/api/favorite'
 export default function Wishlist() {
-  const userToken = localStorage.getItem('token');
-  console.log(userToken);
+
   const [products, setProducts] = useState([]);
-  const [error, setError] = useState('');
-  const user = useContext(UserContext);
+  const [loading, setIsLoading] = useState(false)
+  const [error, setError] = useState('')
 
-  useEffect(() => {
-    fetchProducts();
-  }, [user.user.userId]); // Depend on user ID if it's dynamic
-
-  async function fetchProducts() {
+  const fetchProducts = async () => {
     try {
-      const response = await fetch(`${faveURL}/?userId=${user.user.userId}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${userToken}`,
-        },
-      });
-
+      const response = await fetch(faveURL);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
       const data = await response.json();
       setProducts(data);
+      console.log(products);
+      setIsLoading(false);
     } catch (err) {
       console.error("Error fetching products:", err);
       setError(err.message);
+      setIsLoading(false);
     }
-  }
+  };
 
-  function addToBasket(productId) {
-    // Implementation for adding product to basket
-    console.log(`Adding product ${productId} to basket`);
-    // Assuming there's logic here to handle the addition
-  }
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   return (
+
+
     <div style={{ display: "flex", flexWrap: "wrap", padding: "10rem" }}>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
       {products.map((prod, index) => (
         <div key={index} className="product-card">
-          <h2>{prod.name}</h2> {/* Assuming you want to display product name */}
-          <p>Price: {prod.price}</p>
+          <h2>{prod.name}</h2>
+          <p>{prod.description}</p>
+          <p>${prod.price}</p>
           {prod.image && (
             <img
               src={prod.image}
@@ -55,9 +46,17 @@ export default function Wishlist() {
               style={{ width: "100px", height: "100px" }}
             />
           )}
+          <br />
+
           <button onClick={() => addToBasket(prod._id)}>Add to Basket</button>
+          {/* yizak worked down here doesnt finish */}
+          <PayPalPayment  prod={prod}/>
         </div>
       ))}
     </div>
+
+
   );
+
+
 }

@@ -1,6 +1,7 @@
 const express = require("express")
 const cors = require("cors")
 const app = express()
+const path = require("path")
 
 
 const userRouter = require("./routes/user.routes")
@@ -15,9 +16,10 @@ const createGuestIfNotExist = require("./middleware/createGuest")
 
 app.use(express.json())
 app.use(cors())
-
+// 
 
 // app.use(createGuestIfNotExist);
+// app.use(express.static("client"));
 app.use("/api/user" , userRouter)
 app.use("/api/cart" , cartRouter)
 app.use("/api/discount" , discountRouter)

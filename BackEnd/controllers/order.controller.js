@@ -26,22 +26,17 @@ const createOrder = async (req, res) => {
             if (product.discounts.length > 0) {
                 product.discounts.map((discount) => {
                     orderTotalPrice = orderTotalPrice + discount.finalPrice
-                    // console.log("orderTotalPrice : " , orderTotalPrice);
                     newOrder.totalPrice = + orderTotalPrice
                 })
             }
             else {
-                // console.log("else's");
                 orderTotalPrice = orderTotalPrice + product.price
-                // console.log("orderTotalPrice ELSE : " , orderTotalPrice);
                 newOrder.totalPrice = + orderTotalPrice
             }
             product.supplyInStock -= product.units
-            console.log("newOrder.totalPrice : ", newOrder.totalPrice);
             await product.save()
         }))
         await newOrder.save()
-        console.log("newOrder.totalPrice : ", newOrder.totalPrice);
         return res.status(201).send(newOrder)
     } catch (err) {
         console.log(err);
