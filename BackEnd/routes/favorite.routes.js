@@ -6,9 +6,9 @@ const {Authentication} = require("../middleware/authentication")
 
 
 
-router.get("/",Authentication, getFavoritee);
+router.get("/",Authentication, getFavorite);
 
-router.post("/",Authentication, addFavoritee);
+router.post("/",Authentication, addFavorite);
 
 
 router.delete("/:productId",Authentication, deleteFavorite);

@@ -16,7 +16,6 @@ import Profile from './pages/profile/Profile';
 import SingleProduct from './pages/singleProduct/SingleProduct';
 import Wishlist from './pages/wishlist/Wishlist';
 import About from './pages/about/About';
-import About from './pages/about/About'
 
 
 
