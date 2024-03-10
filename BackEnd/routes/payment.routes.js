@@ -3,10 +3,10 @@ const router = Router()
 const { Authentication } = require("../middleware/authentication")
 const { Payment } = require("../models/payment.model")
 const { Authorize } = require("../middleware/autherization")
-const { createOrder, getOrders } = require('../controllers/payment.controller')
+const { createOrder, getOrders, createOrder2 } = require('../controllers/payment.controller')
 
 
-router.post("/createOrder", createOrder);
+router.post("/createOrder", createOrder2);
 
 router.post("/createOrder/:orderID/capture", getOrders);
 
