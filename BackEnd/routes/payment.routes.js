@@ -3,13 +3,16 @@ const router = Router()
 const { Authentication } = require("../middleware/authentication")
 const { Payment } = require("../models/payment.model")
 const { Authorize } = require("../middleware/autherization")
-const { createPayment, getPayments } = require('../controllers/payment.controller')
+const { createOrder, getOrders } = require('../controllers/payment.controller')
 
-// router.get('/:idBuyer', Authentication, Authorize(['user']), getPaymentByuser)
 
-router.get('/', Authentication, Authorize(['admin']), getPayments)
+router.post("/createOrder", createOrder);
 
-router.post('/',  createPayment)
+router.post("/createOrder/:orderID/capture", getOrders);
 
+// serve index.html
+router.get("/", (req, res) => {
+    res.sendFile(path.resolve("./client/checkout.html"));
+});
 
 module.exports = router
