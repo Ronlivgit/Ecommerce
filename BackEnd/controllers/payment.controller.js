@@ -33,4 +33,4 @@ const getOrders = async (req, res) => {
     }
 }
 
-module.exports = { createOrder, createOrder2, getOrders }
+module.exports = { createOrder, getOrders }
