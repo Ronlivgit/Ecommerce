@@ -85,21 +85,17 @@ function App() {
 
             <Route path="*" element={<NotFound />} />
 
+            {/* </Routes> */}
+
+            <Route path="*" element={<NotFound />} />
+
+
           </Routes>
 
-          <Route path="*" element={<NotFound />} />
-
-
-        </Routes>
-
-
-
-
-
-      </BrowserRouter>
-          <Footer />
-
         </BrowserRouter>
+        <Footer />
+
+        {/* </BrowserRouter> */}
 
       </PayPalScriptProvider>
     </>
